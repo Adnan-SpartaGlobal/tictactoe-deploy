@@ -37,6 +37,9 @@ if [ -f nodejs20-sparta-tictactoe-v1.zip ]; then
     # Start the app and call it tictactoe
     pm2 start index.js --name tictactoe
 
+    pm2 startup systemd -u root --hp /root
+    pm2 save
+
     # Reverse proxy: replace nginx's file-serving line with a proxy to the app.
     # On re-runs the line is already gone, so sed changes nothing.
     sudo sed -i 's|try_files \$uri \$uri/ =404;|proxy_pass http://localhost:3000;|' /etc/nginx/sites-available/default
