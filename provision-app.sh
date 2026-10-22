@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install all relevant packages
-sudo apt install unzip nginx -y
+sudo apt install unzip nginx git -y
 
 # Download the NodeSource setup script for Node.js 20.x
 # and  save it in the file nodesource_setup.sh
@@ -16,6 +16,12 @@ sudo bash nodesource_setup.sh
 # Install the relevant version of Node.js and pm2
 sudo apt install nodejs -y
 sudo npm install -g pm2
+
+# Fresh clone each run so re-runs are safe
+cd ~
+rm -rf tictactoe-deploy
+git clone https://github.com/Adnan-SpartaGlobal/tictactoe-deploy.git
+cd tictactoe-deploy
 
 # Unzip and run the app only if the zip file exists
 if [ -f nodejs20-sparta-tictactoe-v1.zip ]; then
@@ -34,4 +40,3 @@ if [ -f nodejs20-sparta-tictactoe-v1.zip ]; then
 else
     echo "Cannot find zip file needed"
 fi
-
