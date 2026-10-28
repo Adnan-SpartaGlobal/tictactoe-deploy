@@ -6,7 +6,7 @@
 
 - From the DB instance's summary page in the AWS console. You need it for step 3.
 - ssh into both instances
-![alt text](duo-VMs.png)
+![alt text](images/duo-VMs.png)
 
 
 **2. Stop the app**
@@ -53,4 +53,4 @@ pm2 start index.js --name tictactoe
 **7. Check the browser**
 
 Refresh the app's IP. It should now show the MongoDB mode instead of "client local stateful", and a global scoreboard further down. That's the two-tier setup working.
-![alt text](ttt-MongoDB.png)
+![alt text](images/ttt-MongoDB.png)
