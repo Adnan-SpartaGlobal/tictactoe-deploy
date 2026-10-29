@@ -30,10 +30,10 @@ if [ -f nodejs20-sparta-tictactoe-v1.zip ]; then
 
     # Connect the app to the database. Replace <DB_PUBLIC_IP> with the DB instance's IP.
     # Must be set before npm install (which seeds the db from code trainer set up) and before pm2 start.
-    DB_PUBLIC_IP="3.248.220.74"
-    export MONGODB_URI="mongodb://${DB_PUBLIC_IP}:27017/tic-tac-toe"
+    # DB_PUBLIC_IP="3.248.220.74"
+    # export MONGODB_URI="mongodb://${DB_PUBLIC_IP}:27017/tic-tac-toe"
 
-    npm install
+    # npm install
 
     # Remove any existing tictactoe web-apps  process 
     # so re-runs don't create duplicates. If there are no 
